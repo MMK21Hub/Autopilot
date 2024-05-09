@@ -4,4 +4,6 @@ execute store result score @s curPosY run data get entity @s Pos[1] 1000
 
 # Calculate velocity
 scoreboard players operation @s velocityY = @s curPosY
-scoreboard players operation @s velocityY -= @s prevPosY  
+scoreboard players operation @s velocityY -= @s prevPosY
+
+execute if score @s velocityY <= $velocityThreshold autopilot run say Pull up!
