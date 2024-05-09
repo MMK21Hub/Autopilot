@@ -6,6 +6,6 @@ scoreboard objectives add velocityY dummy "Velocity (Y)"
 scoreboard objectives add autopilot dummy "Autopilot"
 
 # Initialise some variables and constants
-scoreboard players set $velocityThreshold autopilot -2000
+scoreboard players set $velocityThreshold autopilot -1500
 
 tellraw @a [{"text":"Loaded ","color":"aqua"},{"text":"Autopilot "},{"text":"by MMK21"}]
