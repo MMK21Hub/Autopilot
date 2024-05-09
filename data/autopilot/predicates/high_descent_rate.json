@@ -1,0 +1,20 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "location": {
+      "position": {
+        "y": {
+          "min": 1.5,
+          "max": 40
+        }
+      }
+    },
+    "movement": {
+      "vertical_speed": {
+        "min": 20,
+        "max": 600
+      }
+    }
+  }
+}
