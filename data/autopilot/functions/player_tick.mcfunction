@@ -6,4 +6,4 @@ execute store result score @s curPosY run data get entity @s Pos[1] 1000
 scoreboard players operation @s velocityY = @s curPosY
 scoreboard players operation @s velocityY -= @s prevPosY
 
-execute if score @s velocityY <= $velocityThreshold autopilot run say Pull up!
+execute if predicate autopilot:in_flight if score @s velocityY <= $velocityThreshold autopilot if predicate autopilot:near_ground run say Pull up!

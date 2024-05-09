@@ -9,12 +9,6 @@
           "max": 40
         }
       }
-    },
-    "movement": {
-      "vertical_speed": {
-        "min": 20,
-        "max": 600
-      }
     }
   }
 }
