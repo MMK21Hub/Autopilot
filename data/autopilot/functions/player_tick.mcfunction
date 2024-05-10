@@ -7,8 +7,10 @@ execute store result score @s curPosY run data get entity @s Pos[1] 1000
 scoreboard players operation @s velocityY = @s curPosY
 scoreboard players operation @s velocityY -= @s prevPosY
 
-# Estimate time-to-impact (in negative microseconds)
+# Estimate time-to-impact (in negative microseconds or something)
+# -500,000,000 means 5 seconds
 scoreboard players operation @s timeToImpact = @s curPosY
 scoreboard players operation @s timeToImpact *= @s velocityY
 
 execute if predicate autopilot:in_flight if score @s velocityY <= $velocityThreshold autopilot if score @s pitch >= $minDangerPitch autopilot if predicate autopilot:near_ground run function autopilot:pull_up
+execute if score @s timeToImpact < $zero autopilot if score @s timeToImpact >= $timeToImpactThreshold autopilot run say About to hit ground!

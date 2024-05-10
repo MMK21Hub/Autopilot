@@ -8,7 +8,10 @@ scoreboard objectives add timeToImpact dummy "Estimated time until impact with g
 scoreboard objectives add autopilot dummy "Autopilot"
 
 # Initialise some variables and constants
+scoreboard players set $zero autopilot 0
 scoreboard players set $velocityThreshold autopilot -1500
+# 0.5 seconds
+scoreboard players set $timeToImpactThreshold autopilot -50000000
 scoreboard players set $minDangerPitch autopilot 35
 
 tellraw @a [{"text":"Loaded ","color":"aqua"},{"text":"Autopilot "},{"text":"by MMK21"}]
