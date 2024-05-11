@@ -10,18 +10,14 @@ scoreboard players operation @s velocityY -= @s prevPosY
 # Estimate time-to-impact (in ticks)
 scoreboard players operation @s timeToImpact = @s curPosY
 scoreboard players operation @s timeToImpact /= @s velocityY
+# Convert time-to-impact to seconds, for display purposes
 scoreboard players operation @s timeToImpactSec = @s timeToImpact
 scoreboard players operation @s timeToImpactSec /= $tickConversionFactor autopilot
 
-# execute as @e[type=marker,tag=autopilot,y=-1,sort=nearest] positioned ~ -1 ~ run function autopilot:check_marker 
-# tag @s add autopilot_target
 execute positioned ~ 0 ~ store result score $suppressPullUp autopilot run function autopilot:check_marker with entity @e[type=marker,tag=autopilot,sort=nearest,limit=1] data.autopilot
-# tag @s remove autopilot_target
 execute if score $suppressPullUp autopilot matches 1 run return 0
 
 execute if predicate autopilot:in_flight if score @s timeToImpact < $zero autopilot if score @s timeToImpact >= $timeToImpactThreshold autopilot if score @s curPosY > $zero autopilot if score @s pitch >= $minDangerPitch autopilot if score @s velocityY <= $velocityThreshold autopilot run function autopilot:pull_up
-# execute if score @s timeToImpact < $zero autopilot if score @s timeToImpact >= $timeToImpactThreshold autopilot run say About to hit ground!
-# execute if score @s timeToImpact < $zero autopilot if score @s timeToImpact >= $timeToImpactThreshold autopilot if score @s curPosY > $zero autopilot run say pull up
 
 execute store result score $gameTime autopilot run time query gametime
 # tellraw @p [{"score":{"name":"$gameTime","objective":"autopilot"}},{"text":", "},{"entity":"@p","nbt":"Pos[1]"}]
