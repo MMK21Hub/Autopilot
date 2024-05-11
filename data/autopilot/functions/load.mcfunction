@@ -12,7 +12,7 @@ scoreboard objectives add autopilot dummy "Autopilot"
 scoreboard players set $zero autopilot 0
 scoreboard players set $tickConversionFactor autopilot 20
 scoreboard players set $velocityThreshold autopilot -500
-scoreboard players set $timeToImpactThreshold autopilot -7
+scoreboard players set $timeToImpactThreshold autopilot -20
 scoreboard players set $minDangerPitch autopilot 35
 
 tellraw @a [{"text":"Loaded ","color":"aqua"},{"text":"Autopilot "},{"text":"by MMK21"}]
