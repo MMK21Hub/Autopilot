@@ -12,6 +12,7 @@ scoreboard objectives add autopilot dummy "Autopilot"
 scoreboard players set $zero autopilot 0
 scoreboard players set $tickConversionFactor autopilot 20
 scoreboard players set $velocityThreshold autopilot -500
+scoreboard players set $pitchAngleVelocityThreshold autopilot -1200
 scoreboard players set $timeToImpactThreshold autopilot -20
 scoreboard players set $minDangerPitch autopilot 35
 
