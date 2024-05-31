@@ -23,4 +23,3 @@ execute if score $suppressPullUp autopilot matches 0 if predicate autopilot:in_f
 scoreboard players operation @s vnavIntervalMod = $gameTime autopilot
 scoreboard players operation @s vnavIntervalMod %= $vnavInterval autopilot
 execute if score @s vnavIntervalMod matches 0 if score @s useVnav > $zero autopilot run function autopilot:turn_to_target
-# $vnavInterval autopilot 
