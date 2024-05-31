@@ -1,7 +1,7 @@
 # Enable scoreboard triggers
 scoreboard players enable @a useLnav
 scoreboard players enable @a vnavInterval
-scoreboard players enable @a vnavAltHold
+scoreboard players enable @a vnavMode
 
 # Update global scoreboard variables
 execute store result score $gameTime autopilot run time query gametime

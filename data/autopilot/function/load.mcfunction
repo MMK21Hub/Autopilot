@@ -9,7 +9,7 @@ scoreboard objectives add lnavIntervalMod dummy "gameTime % lnavInterval"
 scoreboard objectives add vnavIntervalMod dummy "gameTime % vnavInterval"
 scoreboard objectives add useLnav trigger "Automatic LNAV active"
 scoreboard objectives add vnavInterval trigger "Time between VNAV actions (ticks)"
-scoreboard objectives add vnavAltHold trigger "Alt Hold VNAV active"
+scoreboard objectives add vnavMode trigger "VNAV mode"
 
 # Used to store scoreboard variables
 scoreboard objectives add autopilot dummy "Autopilot"
