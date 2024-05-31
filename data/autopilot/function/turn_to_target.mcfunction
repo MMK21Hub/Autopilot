@@ -6,8 +6,5 @@ execute if entity @n[type=marker, tag=autopilotTarget, distance=..5] run return 
 execute at @s run summon marker ~ ~ ~ {Tags: ["autopilotTemp"]}
 execute as @n[type=marker, tag=autopilotTemp] at @s run tp @s ~ ~ ~ facing entity @n[type=marker, tag=autopilotTarget]
 data modify entity @n[type=marker, tag=autopilotTemp] Rotation[1] set from entity @s Rotation[1]
-# data modify entity @n[type=marker, tag=autopilotTemp] Motion set from entity @s Motion
-# tp @s @n[type=marker, tag=autopilotTemp]
 execute rotated as @n[type=marker, tag=autopilotTemp] run tp @s ~ ~ ~ ~ ~
-# tellraw @p [{"entity":"@n[type=marker, tag=autopilotTemp]","nbt":"Pos"}]
 kill @e[type=marker,tag=autopilotTemp]

@@ -18,6 +18,6 @@ scoreboard players set $pitchAngleVelocityThreshold1 autopilot -800
 scoreboard players set $pitchAngleVelocityThreshold2 autopilot -1200
 scoreboard players set $timeToImpactThreshold autopilot -20
 scoreboard players set $minDangerPitch autopilot 35
-scoreboard players set $vnavInterval autopilot 10
+scoreboard players set $vnavInterval autopilot 5
 
 tellraw @a [{"text":"Loaded ","color":"aqua"},{"text":"Autopilot "},{"text":"by MMK21"}]
