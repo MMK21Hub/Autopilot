@@ -20,6 +20,6 @@ execute positioned ~ 0 ~ store result score $suppressPullUp autopilot run functi
 execute if score $suppressPullUp autopilot matches 0 if predicate autopilot:in_flight if score @s timeToImpact < $zero autopilot if score @s timeToImpact >= $timeToImpactThreshold autopilot if score @s curPosY > $zero autopilot if score @s pitch >= $minDangerPitch autopilot if score @s velocityY <= $velocityThreshold autopilot run function autopilot:pull_up
 # tellraw @p [{"score":{"name":"$gameTime","objective":"autopilot"}},{"text":", "},{"entity":"@p","nbt":"Pos[1]"}]
 
-scoreboard players operation @s vnavIntervalMod = $gameTime autopilot
-scoreboard players operation @s vnavIntervalMod %= $vnavInterval autopilot
-execute if score @s vnavIntervalMod matches 0 if score @s useVnav > $zero autopilot run function autopilot:turn_to_target
+scoreboard players operation @s lnavIntervalMod = $gameTime autopilot
+scoreboard players operation @s lnavIntervalMod %= $lnavInterval autopilot
+execute if score @s lnavIntervalMod matches 0 if score @s useLnav > $zero autopilot run function autopilot:turn_to_target
