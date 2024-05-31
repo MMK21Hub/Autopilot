@@ -1,5 +1,5 @@
 execute store result score @s pitch run data get entity @s Rotation[1]
-# Store positions with scale factor of 1000
+execute store result score @s pitchMilli run data get entity @s Rotation[1] 1000
 execute store result score @s prevPosY run scoreboard players get @s curPosY
 execute store result score @s curPosY run data get entity @s Pos[1] 1000
 
@@ -23,3 +23,8 @@ execute if score $suppressPullUp autopilot matches 0 if predicate autopilot:in_f
 scoreboard players operation @s lnavIntervalMod = $gameTime autopilot
 scoreboard players operation @s lnavIntervalMod %= $lnavInterval autopilot
 execute if score @s lnavIntervalMod matches 0 if score @s useLnav > $zero autopilot run function autopilot:turn_to_target
+
+scoreboard players operation @s vnavIntervalMod = $gameTime autopilot
+# Never trigger if vnavInterval == 0 by leaving vnavIntervalMod set to $gameTime (which will probably never be 0)
+execute unless score @s vnavInterval matches 0 run scoreboard players operation @s vnavIntervalMod %= @s vnavInterval
+execute if score @s vnavIntervalMod matches 0 run function autopilot:alt_hold_vnav
