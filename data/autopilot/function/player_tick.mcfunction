@@ -27,4 +27,4 @@ execute if score @s lnavIntervalMod matches 0 if score @s useLnav > $zero autopi
 scoreboard players operation @s vnavIntervalMod = $gameTime autopilot
 # Never trigger if vnavInterval == 0 by leaving vnavIntervalMod set to $gameTime (which will probably never be 0)
 execute unless score @s vnavInterval matches 0 run scoreboard players operation @s vnavIntervalMod %= @s vnavInterval
-execute if score @s vnavIntervalMod matches 0 if score @s vnavMode matches 1 run function autopilot:alt_hold_vnav
+execute if predicate autopilot:in_flight if score @s vnavIntervalMod matches 0 if score @s vnavMode matches 1 run function autopilot:alt_hold_vnav
