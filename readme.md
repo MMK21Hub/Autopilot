@@ -6,7 +6,7 @@ An experimental datapack to provide safeguards (and maybe auto-navigation in the
 
 ### Automatic pitch-up
 
-Automatically pitches the player to 10 degrees (slight nose-up) if it detects the player is about to hit the ground (assumed to be y=0) with high velocity.
+Automatically pitches the player to a safe angle (between 1° nose-down and 10° nose-up) if it detects the player is about to hit the ground (which is assumed to be at y=0) with high velocity.
 
 #### Suppress auto pitch-up in an area
 
